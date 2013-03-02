@@ -1,0 +1,39 @@
+.slides {
+  font-size: 1.4em;
+}
+
+.slides ul li {
+  margin-top: 10px;
+}
+
+.slides table tr td:first-child {
+  width: 300px;
+}
+
+.slides table tr td {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.slides table tr:nth-child(2n+3) {
+  background: #e3e3e3
+}
+
+.slides table tr:nth-child(2n) {
+  background: #fff;
+}
+
+.slides code {
+  font-size: 1.5em;
+  line-height: 1.5;
+  max-height: none;
+}
+
+.reveal .slides img {
+  border: 0;
+}
+
+body {
+  background: url(../../img/tex2res5.png);
+}
+
