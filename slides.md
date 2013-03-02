@@ -467,3 +467,98 @@ command)</span>
     < hello >
      _______ 
 </code></pre>
+
+
+
+## Cutting Data Based On Columns 
+
+<pre><code class="bash">
+  $ who
+    ynonperek console  Feb 22 10:50 
+    ynonperek ttys000  Mar  1 17:33 
+    ynonperek ttys001  Mar  2 21:59 
+    ynonperek ttys002  Mar  2 22:01 
+
+  <span class="fragment"> $ who | cut -f2 -d' '
+    console
+    ttys000
+    ttys001
+    ttys002</span>
+  
+</code></pre>
+
+
+
+## Cutting Data Based On Columns
+* use `cut -f 2 -d ' '` to cut columns
+* `-f` specifies field number
+* `-d` specifies delimeter
+* use `cut -c1-4,8` to cut characters
+* pass `-s` to skip lines with no delim
+
+
+
+## Translating characters
+* Use `tr` to convert fron one character set to another. 
+* `tr` takes origin and destination character sets (each surrounded by single quote)
+* Takes an optional input file.
+
+
+
+## Using tr
+<pre><code class="bash">
+  $ tr 'a-z' 'A-Z' story.txt
+
+  $ tr '0-9' '.' phones.txt
+
+  $ tr 'a-zA-Z' 'A-Za-z' story.txt
+
+  $ tr -d '0-9'
+
+  $ tr -s ' '
+
+</code></pre>
+
+
+
+## Sorting Text
+* Use `sort` to sort your output
+* Takes input files and sort options
+* By default sort ascending as text
+* Use `sort -n` for numeric sort
+* Use `sort -f` to ignore case
+
+
+
+## Sorting Text
+* Use `sort -k2` to sort using the second column
+* Pass `-t` to use a custom separator
+* Pass `-u` to print only unique values
+
+
+
+## Saving Output
+<pre><code class="bash">
+  # Don't do this (won't work):
+  $ sort data > data
+
+  # Remember the -o (this works):
+  $ sort data -o data
+</code></pre>
+
+
+
+## Grepping Output
+* Use `grep` to filter out lines from output
+* Pass `-v` to inverse
+* Pass '-x' for full-line matches
+* Use '-ilR' for recursive find-in-files
+
+
+
+# Q & A <img src="img/qa.png" style="float:right">
+* <span style="opacity: 0.4">Wildcards</span>
+* <span style="opacity: 0.4">Pipes & Filters</span>
+* Environment and System Files
+* Find
+* Background Execution
