@@ -562,3 +562,276 @@ command)</span>
 * Environment and System Files
 * Find
 * Background Execution
+
+
+
+## Improving The Environment
+![environment](img/env.jpg)
+
+* Aliases
+* Functions
+* Special Env Variables
+
+
+
+## Aliases
+* An alias is a command shortcut
+* Define an alias with `alias a='command'`
+* Don't forget to quote
+* Use `unalias` to remove an alias
+
+
+
+## Useful Aliases
+<pre><code class="bash">
+  $ alias c=clear
+  
+  $ alias ll='ls -l'
+
+  $ alias cd..='cd ..'
+ 
+  $ alias ip='ifconfig |grep -w inet| tr -d "\t" | cut -d' ' -f2 | grep -v 127.0.0.1'
+</code></pre>
+
+
+
+## Alias Tricks
+<pre><code class="bash">
+  # Fool your friends
+  $ alias ls='echo ALL YOUR BASE ARE BELONG TO US'
+
+  # Try to run
+  $ ls
+  ALL YOUR BASE ARE BELONG TO US
+
+  # Run original ls
+  $ \ls
+  $ 'ls'
+</code></pre>
+
+
+
+## Functions
+<pre><code class="bash">
+  $ fp main
+ 
+  main.c main.o mainlyunix.txt 
+</code></pre>
+* Sometimes we want to pass parameters to our aliases
+* In bash, we can use _functions_
+* A function works _like_ an alias, but can take arguments
+
+
+
+## Defining Functions
+<pre><code class="bash">
+  $ function add { expr $1 + $2; }
+
+</code></pre>
+* Use the keyword `function` to define a function
+* Inside the function, use $1 to access first argument
+* $2, $3, ... also work
+* Remember the semi-colon at the end
+
+
+
+## Environment Variables
+* Bash has two types of variables:
+  * normal variables
+  * environment variables
+* Environment variables pass to child processes
+
+
+
+## Environment Variables
+![environment variables keep state](img/env2.png)
+
+
+
+## Special Environment Variables
+
+<table>
+  <tr>
+    <th>Variable Name</th>
+    <th>Meaning</th>
+  </tr>
+  <tr>
+    <td>PATH</td>
+    <td>Search path for executables</td>
+  </tr>
+  <tr>
+    <td>USER</td>
+    <td>Current user</td>
+  </tr>
+  <tr>
+    <td>HOME</td>
+    <td>Home directory</td>
+  </tr>
+  <tr>
+    <td>PS1</td>
+    <td>Primary prompt string</td>
+  </tr>
+  <tr>
+    <td>EDITOR</td>
+    <td>favorite text editor</td>
+  </tr>
+</table>
+
+
+
+## Startup Files
+* By default, changes to environment do not persist
+* Bash reads special initialization files on startup
+* Use startup files to create permanent changes to your environment
+* Bash has 4 startup files
+
+
+
+## Startup Files
+<table>
+  <tr>
+    <th>File Name</th>
+    <th>Run At</th>
+  </tr>
+  <tr>
+    <td><code class="small">/etc/bashrc</code></td>
+    <td>Every shell for all users</td>
+  </tr>
+  <tr> 
+    <td><code class="small">/etc/profile</code></td>
+    <td>Login shell for all users</td>
+  </tr>
+  <tr>
+    <td><code class="small">~/.bashrc</code></td>
+    <td>Every shell for current user</td>
+  </tr>
+  <tr>
+    <td><code class="small">~/.bash_profile</code></td>
+    <td>Login shell for current user</td>
+  </tr>
+</table>
+
+
+
+# Q & A <img src="img/qa.png" style="float:right">
+* <span style="opacity: 0.4">Wildcards</span>
+* <span style="opacity: 0.4">Pipes & Filters</span>
+* <span style="opacity: 0.4">Environment and System Files</span>
+* Find
+* Background Execution
+
+
+
+## Finding Files & Directories
+![find image](img/find.jpg)
+
+
+
+## Using find
+* find files by type
+* find files by owner
+* find files by name
+* find files by size
+* find files by modification date
+
+
+
+## Find files by type
+<pre><code class="bash">
+  # find directories
+  $ find . -type d
+
+  # find normal files
+  $ find . -type f
+
+  # find symbolic links
+  $ find . -type l
+</code></pre>
+
+
+
+## Find files by owner
+<pre><code class="bash">
+  # find by user name
+  $ find  . -user joe  
+
+  # find by user id
+  $ find . -user 501
+</code></pre>
+
+* If user is numeric and there's no such user, it's treated as a user id
+
+
+
+## Find files by name
+<pre><code class="bash">
+  # find all files named main.c
+  $ find . -name main.c
+  
+  # find all files ending with .o
+  $ find . -name '*.o'
+
+  # fine all directories named src
+  $ find . -name src -type d
+</code></pre>
+* Don't forget to quote wildcards
+
+
+
+## Find files by size
+<pre><code class="bash">
+  # find all files larger than 2k
+  $ find . -size +2k
+
+  # find all files smaller than 2mb
+  $ find . -size -2M
+
+  # find all files larger than 2k but smaller than 5k
+  $ find . -size +2k -size -5k
+</code></pre>
+
+
+
+# Q & A <img src="img/qa.png" style="float:right">
+* <span style="opacity: 0.4">Wildcards</span>
+* <span style="opacity: 0.4">Pipes & Filters</span>
+* <span style="opacity: 0.4">Environment and System Files</span>
+* <span style="opacity: 0.4">Find</span>
+* Background Execution
+
+
+
+## Background Execution
+* Run a command in the background by adding an & at the end of the command line
+* Each background process is called a job
+* Use `jobs` to list all running jobs
+
+
+
+## Background Execution
+<pre><code class="bash">
+  # returns to shell after 10 seconds
+  $ sleep 10
+
+  # returns immediately
+  $ sleep 10 &
+</code></pre>
+
+
+
+## Job Control
+* Press Ctrl+Z to put a running process "on hold", and go back to the shell
+* Use jobs to see all jobs (frozen and background processes)
+* Use fg to return a job to foreground (active process)
+* Use bg to send a frozen task to work in the background
+* Both fg and bg can take job number as % sign
+
+
+
+
+# Q & A <img src="img/qa.png" style="float:right">
+* <span style="opacity: 0.4">Wildcards</span>
+* <span style="opacity: 0.4">Pipes & Filters</span>
+* <span style="opacity: 0.4">Environment and System Files</span>
+* <span style="opacity: 0.4">Find</span>
+* <span style="opacity: 0.4">Background Execution</span>

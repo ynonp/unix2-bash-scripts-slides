@@ -6,6 +6,10 @@
   margin-top: 10px;
 }
 
+.slides table {
+  width: 100%;
+}
+
 .slides table tr td:first-child {
   width: 300px;
 }
@@ -30,10 +34,13 @@
 }
 
 .reveal .slides img {
-  border: 0;
+  box-shadow: 0px 0px 8px 8px #777;
 }
 
 body {
   background: url(../../img/tex2res5.png);
 }
 
+.slides code.small {
+  font-size: 0.8em;
+}
