@@ -215,13 +215,34 @@ of matching filenames
 
 
 
-# Q & A <img src="img/qa.png" style="float:right">
-* <span style="opacity: 0.4">Wildcards</span>
-* Pipes & Filters
-* Environment and System Files
-* Find
-* Background Execution
+## Command Substitution
+* Beside wildcards, bash performs some more automatic substitutions
+* Command substitutions are triggered with $(...)
+* The expression inside parens is executed
+* Bash substitutes the entire expression with its result
 
+
+
+## Command Substitution
+<pre><code class="bash">
+  $ printf "0x%x\n" $(date +%Y)
+
+  $ rm $(cat todelete.txt)
+</code></pre>
+
+
+
+<div class="slide-img">
+  <h1>Q &amp; A</h1>
+  <img src="img/qa.png" />
+  <ul>
+    <li class="done">Wildcards</li>
+    <li>Pipes &amp; Filters</li>
+    <li>Environment and System Files</li>
+    <li>Find</li>
+    <li>Background Execution</li>
+  </ul>
+</div>
 
 
 
@@ -556,12 +577,17 @@ command)</span>
 
 
 
-# Q & A <img src="img/qa.png" style="float:right">
-* <span style="opacity: 0.4">Wildcards</span>
-* <span style="opacity: 0.4">Pipes & Filters</span>
-* Environment and System Files
-* Find
-* Background Execution
+<div class="slide-img">
+  <h1>Q &amp; A</h1>
+  <img src="img/qa.png" />
+  <ul>
+    <li class="done">Wildcards</li>
+    <li class="done">Pipes &amp; Filters</li>
+    <li>Environment and System Files</li>
+    <li>Find</li>
+    <li>Background Execution</li>
+  </ul>
+</div>
 
 
 
@@ -713,12 +739,17 @@ command)</span>
 
 
 
-# Q & A <img src="img/qa.png" style="float:right">
-* <span style="opacity: 0.4">Wildcards</span>
-* <span style="opacity: 0.4">Pipes & Filters</span>
-* <span style="opacity: 0.4">Environment and System Files</span>
-* Find
-* Background Execution
+<div class="slide-img">
+  <h1>Q &amp; A</h1>
+  <img src="img/qa.png" />
+  <ul>
+    <li class="done">Wildcards</li>
+    <li class="done">Pipes &amp; Filters</li>
+    <li class="done">Environment and System Files</li>
+    <li>Find</li>
+    <li>Background Execution</li>
+  </ul>
+</div>
 
 
 
@@ -792,12 +823,17 @@ command)</span>
 
 
 
-# Q & A <img src="img/qa.png" style="float:right">
-* <span style="opacity: 0.4">Wildcards</span>
-* <span style="opacity: 0.4">Pipes & Filters</span>
-* <span style="opacity: 0.4">Environment and System Files</span>
-* <span style="opacity: 0.4">Find</span>
-* Background Execution
+<div class="slide-img">
+  <h1>Q &amp; A</h1>
+  <img src="img/qa.png" />
+  <ul>
+    <li class="done">Wildcards</li>
+    <li class="done">Pipes &amp; Filters</li>
+    <li class="done">Environment and System Files</li>
+    <li class="done">Find</li>
+    <li>Background Execution</li>
+  </ul>
+</div>
 
 
 
@@ -828,10 +864,15 @@ command)</span>
 
 
 
+<div class="slide-img">
+  <h1>Q &amp; A</h1>
+  <img src="img/qa.png" />
+  <ul>
+    <li class="done">Wildcards</li>
+    <li class="done">Pipes &amp; Filters</li>
+    <li class="done">Environment and System Files</li>
+    <li class="done">Find</li>
+    <li class="done">Background Execution</li>
+  </ul>
+</div>
 
-# Q & A <img src="img/qa.png" style="float:right">
-* <span style="opacity: 0.4">Wildcards</span>
-* <span style="opacity: 0.4">Pipes & Filters</span>
-* <span style="opacity: 0.4">Environment and System Files</span>
-* <span style="opacity: 0.4">Find</span>
-* <span style="opacity: 0.4">Background Execution</span>

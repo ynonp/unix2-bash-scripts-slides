@@ -44,3 +44,19 @@ body {
 .slides code.small {
   font-size: 0.8em;
 }
+
+.slides ul {
+  width: 100%;
+}
+
+.slides .slide-img img {
+  float: right;
+}
+
+.slides .slide-img ul {
+  width: auto;
+}
+
+.slides li.done {
+  opacity: 0.4;
+}
