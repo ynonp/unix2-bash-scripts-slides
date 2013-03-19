@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Unix Scripting Lab</title>
+
+</head>
+<body>
+<h1>Unix Scripting Lab</h1>
+
+<h2>Part 1: Shell Review</h2>
+
+<ol>
+<li><p>Create a new directory for the course in your home folder called <code>lab</code>. Inside, create the following files:</p>
+
+<ul>
+<li><code>main.c</code>, <code>game.c</code>, <code>enemy.c</code>, <code>hero.c</code></li>
+<li><code>monster.h</code>, <code>human.h</code></li>
+<li><code>.highscore</code></li>
+<li><code>Music</code>, <code>Misc</code>, <code>Drivers</code></li>
+</ul>
+</li>
+<li><p>Display all files starting with an <code>e</code></p></li>
+<li>Copy all files starting with a capital letter to a new directory called capitals</li>
+<li>Delete all files whose extension is a single letter</li>
+<li>Rename both occurences of <code>Misc</code> folder to <code>Test</code></li>
+<li>Delete all files containing m</li>
+</ol>
+
+
+<hr />
+
+<ol>
+<li>List all files containing a lowercase letter in their name, AND the nonexistant file named <code>Hidden</code></li>
+<li>Now show the same list, but redirect standard output to a file</li>
+<li>Now show the same list, but redirect standard error to a file</li>
+<li>Combine 8 and 9: Redirect standard output to one file, and standard error to another</li>
+<li>Create 3 files: <code>file1</code>, <code>file2</code>, <code>file3</code></li>
+<li>Use <code>hostname</code> to write the current host name into <code>file1</code></li>
+<li>Prevent file clobbering</li>
+<li>Repeat (6). Did you get an error ?</li>
+<li>Fix the error keeping the noclobber option set</li>
+</ol>
+
+
+<h2>Part 2: Environment</h2>
+
+<ol>
+<li>Create a new directory named: <code>I have $5</code></li>
+<li>Create an alias that finds all files larger than 2k but smaller than 5k</li>
+<li>Create an alias that finds all directories in /tmp owned by the current user</li>
+<li>Create an alias that finds all files modified within the last 4 hours</li>
+<li>Create a shell function that finds partial matches of a file name, so you could type: <code>findpartial txt</code> to get all files with txt in their name</li>
+<li>Create an alias for <code>cp</code> that turns it to <code>cp -i</code></li>
+<li>Create an alias for <code>rm</code> that turns it to <code>rm -i</code></li>
+<li>Create an alias that prints how many files exist under current directory</li>
+<li>Create an alias that prints how many executable files exist under current directory</li>
+<li>Create a shell function that takes a date and prints how many files were modified in that date</li>
+</ol>
+
+
+<h2>Part 3: Getting Parameters</h2>
+
+<ol>
+<li>Write a shell script that takes a file name as input and prints the file backwards</li>
+<li>Write a shell script that takes two file names as inputs, and replaces their contents.</li>
+<li>Write a shell script that reads a file name from the user, prints its contents and the number of lines in the file.</li>
+<li>Write a shell script that takes several file names as inputs, and copies itself to each of the files. Don't forget to set execute permissions on the target files.</li>
+<li>Write a shell script that takes a windows file (lines end with <code>\r\n</code>), and converts it to Unix file (lines end only with <code>\n</code>).</li>
+</ol>
+
+
+<h2>Part 4: Conditionals</h2>
+
+<ol>
+<li>Write a shell script that takes an input argument and tells if it's a string or a number (Hint: try <code>expr a + 0</code>)</li>
+<li>Write a shell script that takes 3 input arguments and prints out the largest one</li>
+<li>Write a shell script that reads a name from the user - if that name is an executable program run it, otherwise print its content.
+If it's not a file print an error message.</li>
+<li>Write a shell script that takes two file names, and prints the contents of the larger one.</li>
+<li>Write a shell script that asks the user for a number, if the user chooses 7 - print "You Win".</li>
+<li>Write a <code>safedel</code> script. The script takes a file name as command line input, and moves that file to a <code>~/TRASH</code> directory instead of deleting it. <br/>
+Upon invocation, script should check <code>~/TRASH</code> for files older than 48 hours and delete them.</li>
+</ol>
+
+
+<h2>Part 5: Loops</h2>
+
+<ol>
+<li>Write a shell script that takes input as command line arguments and prints them out backwards.</li>
+<li>Write a shell script called "wait_for_user" that takes a user name and checks if the user is logged in. If she's not logged in, the script sleeps for 5 seconds and checks again in a loop - until the user logs in.</li>
+<li>Write a shell script that reads a file name from the user, checks that the file is valid, and lowecases its name. For example, running <code>lc MyFile</code> should rename the file <code>MyFile</code> to <code>myfile</code>.</li>
+<li>Write a shell script that reads a file and prints its content double-spaced (adding a blank line after each line)</li>
+<li>Write a shell script that reads a file and prints its content with no blank lines.</li>
+<li>Write a shell script that reads a file and prints out only the longest line</li>
+<li>Write a shell script that takes a two file extensions as input (call them ext1 and ext2), and renames all files ending with ext1 to end with ext2.</li>
+</ol>
+
+
+<h2>Part 6: Functions</h2>
+
+<ol>
+<li>Write a shell function called sum that returns the sum of its arguments</li>
+<li>Write a shell function called countExecutables() that takes a directory name as parameter and returns the number of executable files in that directory.</li>
+<li>Write a shell function that prints out the multiplication table. Function should take a number <code>n</code> and print a table sized <code>n*n</code>.
+For example, running <code>mul 5</code> should produce:</li>
+</ol>
+
+
+<pre><code>    1   2   3   4   5   
+1   1   2   3   4   5   
+2   2   4   6   8   10  
+3   3   6   9   12  15  
+4   4   8   12  16  20  
+5   5   10  15  20  25  
+</code></pre>
+
+<ol>
+<li>Write a shell script that includes two functions: add_contact and email_contact.<br/>
+<code>add_contact</code> takes a name and an email.<br/>
+<code>email_contact</code> takes a name and some text, and sends the text to the contact's email address (as specified before when the contact was added).<br/>
+Use a contacts.txt file to store the data.</li>
+</ol>
+
+</body>
+</html>

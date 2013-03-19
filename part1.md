@@ -248,7 +248,7 @@ of matching filenames
 
 ## File Descriptors
 
-<img src="img/fd.png" style="border:0" />
+<img src="img/fd.png" class="noborder" />
 
 * Each process has 3 file descriptors opened by default
 * Bash opens STDIN for keyboard input
@@ -349,7 +349,7 @@ Even in noclobber mode, it's possible to clobber a specific file
 
 ## Pipes: Building longer chains
 
-<img src="img/pipes1.png" style="border:0">
+<img src="img/pipes1.png" class="noborder">
 
 ```
      _____ 
@@ -425,7 +425,7 @@ command)</span>
 * Use head to cut just the top of the output
 * Use tail to cut just the bottom of the output
 
-![head and tail](img/headtail.png)
+<img src="img/headtail.png" class="noborder" />
 
 
 
@@ -670,7 +670,7 @@ command)</span>
 
 
 ## Environment Variables
-![environment variables keep state](img/env2.png)
+<img src="img/env2.png" class="noborder" />
 
 
 
