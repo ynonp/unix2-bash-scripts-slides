@@ -1,5 +1,4 @@
-# Unix Shell Automation
-![Unix Course Logo](http://ynonperek.com/sites/default/files/linux.png)
+# Advanced Unix & Bash
 
 Slides By: [Ynon Perek](http://ynonperek.com).
 

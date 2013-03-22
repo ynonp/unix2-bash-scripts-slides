@@ -68,7 +68,7 @@ prints them out backwards (first argument printed last).
 4. Write a shell script that reads a file and prints its content with no blank lines.
 5. Write a shell script that reads a file and prints out only the longest line
 6. Write a shell script that takes a two file extensions as input (call them ext1 and ext2), and renames all files ending with ext1 to end with ext2. 
-7. Write a shell script that takes several file names as inputs, and copies itself to each of the files. Don't forget to set execute permissions on the target files.
+7. write a shell script that takes several file names as inputs, and copies itself to each of the files. don't forget to set execute permissions on the target files.
  
 ## Part 6: Functions
 
