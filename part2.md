@@ -640,7 +640,6 @@ esac
 * Takes only function body
 * Arguments are positional parameters ($1, $2, ...)
 * Argument count is stored in $#
-* Functions don't return values
 
 
 
@@ -686,6 +685,29 @@ esac
 * utils.sh contains definitions for some utility functions
 * Use it with `.`
 * Then use functions from it
+
+
+
+## Function Return Values
+* A function can return a value with the `return` keyword
+* The return value is stored in $?
+* Works like running a "mini-script"
+
+
+
+## Using Return Values
+<pre><code class="bash">
+  function add() {
+    local result
+    (( result = $1 + $2 ))
+    return $result
+  }
+
+  add 10 20
+
+  # prints 30
+  echo $?
+</code></pre>
 
 
 
