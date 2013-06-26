@@ -6,6 +6,8 @@
 	* `main.c`, `game.c`, `enemy.c`, `hero.c`
 	* `monster.h`, `human.h`
 	* `.highscore`
+
+2. Create the following directories under `lab`
 	* `Music`, `Misc`, `Drivers`
 	
 2. Display all files starting with an `e`
@@ -19,7 +21,7 @@
 1. List all files containing a lowercase letter in their name, AND the nonexistant file named `Hidden`
 2. Now show the same list, but redirect standard output to a file
 3. Now show the same list, but redirect standard error to a file
-4. Combine 8 and 9: Redirect standard output to one file, and standard error to another
+4. Combine 2 and 3: Redirect standard output to one file, and standard error to another
 5. Create 3 files: `file1`, `file2`, `file3`
 6. Use `hostname` to write the current host name into `file1`
 7. Prevent file clobbering
