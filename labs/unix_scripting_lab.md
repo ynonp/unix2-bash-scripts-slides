@@ -3,7 +3,7 @@
 ## Part 1: Shell Review
 
 1. Create a new directory for the course in your home folder called `lab`. Inside, create the following files: 
-	* `main.c`, `game.c`, `enemy.c`, `hero.c`
+	* `main.c`, `game.c`, `enemy.c`, `hero.c`, `a.out`
 	* `monster.h`, `human.h`
 	* `.highscore`
 
