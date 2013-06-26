@@ -47,9 +47,9 @@
 1. Write a shell script that takes a file name as input and prints the file backwards
 2. Write a shell script that takes two file names as inputs, and replaces their contents.
 3. Write a shell script that reads a file name from the user, prints its contents and the number of lines in the file.
-4. Write a shell script that takes several file names as inputs, and copies itself to each of the files. Don't forget to set execute permissions on the target files.
-5. Write a shell script that takes a windows file (lines end with `\r\n`), and converts it to Unix file (lines end only with `\n`).
+4. Write a shell script that takes a unix file (lines end with `\n`),
 
+and converts it to Windows file (lines end with `\r\n`).
 ## Part 4: Conditionals
 
 1. Write a shell script that takes an input argument and tells if it's a string or a number (Hint: try `expr a + 0`)
@@ -60,15 +60,17 @@ If it's not a file print an error message.
 5. Write a shell script that asks the user for a number, if the user chooses 7 - print "You Win".
 6. Write a `safedel` script. The script takes a file name as command line input, and moves that file to a `~/TRASH` directory instead of deleting it.   
 Upon invocation, script should check `~/TRASH` for files older than 48 hours and delete them.
+7. Write a shell script that reads a file name from the user, checks that the file is valid, and lowecases its name. For example, running `lc MyFile` should rename the file `MyFile` to `myfile`.
 
 ## Part 5: Loops
-1. Write a shell script that takes input as command line arguments and prints them out backwards.
+1. Write a shell script that takes input as command line arguments and
+prints them out backwards (first argument printed last).
 2. Write a shell script called "wait_for_user" that takes a user name and checks if the user is logged in. If she's not logged in, the script sleeps for 5 seconds and checks again in a loop - until the user logs in.
-3. Write a shell script that reads a file name from the user, checks that the file is valid, and lowecases its name. For example, running `lc MyFile` should rename the file `MyFile` to `myfile`.
-4. Write a shell script that reads a file and prints its content double-spaced (adding a blank line after each line)
-5. Write a shell script that reads a file and prints its content with no blank lines.
-6. Write a shell script that reads a file and prints out only the longest line
-7. Write a shell script that takes a two file extensions as input (call them ext1 and ext2), and renames all files ending with ext1 to end with ext2. 
+3. Write a shell script that reads a file and prints its content double-spaced (adding a blank line after each line)
+4. Write a shell script that reads a file and prints its content with no blank lines.
+5. Write a shell script that reads a file and prints out only the longest line
+6. Write a shell script that takes a two file extensions as input (call them ext1 and ext2), and renames all files ending with ext1 to end with ext2. 
+7. write a shell script that takes several file names as inputs, and copies itself to each of the files. don't forget to set execute permissions on the target files.
  
 ## Part 6: Functions
 
