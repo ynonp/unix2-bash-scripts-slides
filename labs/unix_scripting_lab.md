@@ -109,3 +109,6 @@ sed in a pipeline to join each number to its line (removing the newline).
 3. Emulate head with sed (print top 10 lines)
 4. Emulate `tail -1` with sed (print last line of a file)
 5. Emulate `uniq` with sed (delete consecutive duplicate lines)
+8. Delete duplicate words from input line
+9. Replace the first and last word in every line
+
