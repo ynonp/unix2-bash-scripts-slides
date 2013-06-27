@@ -88,7 +88,23 @@ For example, running `mul 5` should produce:
 5	5	10	15	20	25	
 ```
 
-4. Write a shell script that includes two functions: add_contact and email_contact.  
+4. Write a shell script that includes the following functions:
 `add_contact` takes a name and an email.  
+`list_contacts` prints out a list of all available contact details and
+emails
 `email_contact` takes a name and some text, and sends the text to the contact's email address (as specified before when the contact was added).  
-Use a contacts.txt file to store the data.
+Use a contacts.txt file to store the data.   
+Now write another script which uses the functions
+
+## Part 7: Sed
+
+1. Add a blank line after each line of input
+6. Change an existing file, so each line should start with a '> '
+7. Use sed to perform the following two replacements:
+  1. If a line starts with `#`, replace each character with a `-`
+  2. For all other lines, replace each character with a `.`
+2. `sed = filename` prints out the file with line numbers. Use another
+sed in a pipeline to join each number to its line (removing the newline).
+3. Emulate head with sed (print top 10 lines)
+4. Emulate `tail -1` with sed (print last line of a file)
+5. Emulate `uniq` with sed (delete consecutive duplicate lines)
