@@ -89,10 +89,11 @@ For example, running `mul 5` should produce:
 ```
 
 4. Write a shell script that includes the following functions:
-`add_contact` takes a name and an email.  
-`list_contacts` prints out a list of all available contact details and
+  - `add_contact` takes a name and an email.  
+  - `list_contacts` prints out a list of all available contact details and
 emails
-`email_contact` takes a name and some text, and sends the text to the contact's email address (as specified before when the contact was added).  
+  - `email_contact` takes a name and some text, and sends the text to the contact's email address (as specified before when the contact was added).  
+
 Use a contacts.txt file to store the data.   
 Now write another script which uses the functions
 
