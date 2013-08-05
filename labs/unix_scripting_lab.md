@@ -11,7 +11,7 @@
 	* `Music`, `Misc`, `Drivers`
 	
 2. Display all files starting with an `e`
-3. Copy all files starting with a capital letter to a new directory called capitals
+3. Copy all files and folders starting with a capital letter to a new directory called capitals
 4. Delete all files whose extension is a single letter
 5. Rename both occurences of `Misc` folder to `Test`
 6. Delete all files containing m
