@@ -47,9 +47,9 @@
 1. Write a shell script that takes a file name as input and prints the file backwards
 2. Write a shell script that takes two file names as inputs, and replaces their contents.
 3. Write a shell script that reads a file name from the user, prints its contents and the number of lines in the file.
-4. Write a shell script that takes a unix file (lines end with `\n`),
+4. Write a shell script that takes a Windows file (lines end with
+   `\r\n`) and converts it to a Unix file (lines end with `\n`).
 
-and converts it to Windows file (lines end with `\r\n`).
 ## Part 4: Conditionals
 
 1. Write a shell script that takes an input argument and tells if it's a string or a number (Hint: try `expr a + 0`)
