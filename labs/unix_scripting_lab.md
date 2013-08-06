@@ -59,7 +59,7 @@ If it's not a file print an error message.
 4. Write a shell script that takes two file names, and prints the contents of the larger one.
 5. Write a shell script that asks the user for a number, if the user chooses 7 - print "You Win".
 6. Write a `safedel` script. The script takes a file name as command line input, and moves that file to a `~/TRASH` directory instead of deleting it.   
-Upon invocation, script should check `~/TRASH` for files older than 48 hours and delete them.
+Upon invocation, script should check `~/TRASH` for files older than 48 hours and delete them (hint: use `find`).
 7. Write a shell script that reads a file name from the user, checks that the file is valid, and lowecases its name. For example, running `lc MyFile` should rename the file `MyFile` to `myfile`.
 
 ## Part 5: Loops
