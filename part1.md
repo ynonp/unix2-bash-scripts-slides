@@ -652,7 +652,7 @@ command)</span>
 
 ## Defining Functions
 <pre><code class="bash">
-  $ function add { expr $1 + $2; }
+  $ function add() { expr $1 + $2; }
 
 </code></pre>
 * Use the keyword `function` to define a function
