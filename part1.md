@@ -10,8 +10,10 @@ My Email:
 [ynon@ynonperek.com](mailto:ynon@ynonperek.com)
 
 Slides At: 
-[ynonperek.com](http://ynonperek.com)
+[ynonperek.com](http://ynonperek.com/static/unix2/)
 
+Labs At:
+[Unix 2 Labs](http://ynonperek.com/static/unix2/labs/unix_scripting_lab.pdf)
 
 
 # Agenda
@@ -519,7 +521,7 @@ command)</span>
 
 
 ## Translating characters
-* Use `tr` to convert fron one character set to another. 
+* Use `tr` to convert from one character set to another. 
 * `tr` takes origin and destination character sets (each surrounded by single quote)
 * Takes an optional input file.
 
