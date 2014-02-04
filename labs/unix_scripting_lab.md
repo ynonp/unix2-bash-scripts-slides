@@ -71,8 +71,24 @@ prints them out backwards (first argument printed last).
 5. Write a shell script that reads a file and prints out only the longest line
 6. Write a shell script that takes a two file extensions as input (call them ext1 and ext2), and renames all files ending with ext1 to end with ext2. 
 7. write a shell script that takes several file names as inputs, and copies itself to each of the files. don't forget to set execute permissions on the target files.
+
+
+## Part 6: Named Pipes
+1. Create a named pipe called `bob`
+2. Print out the list of files to the named pipe. Notice ls blocks.
+3. Read the contents of the pipe using cat. Notice ls unblocks.
+4. Write a shell script that creates a named pipe and listens on it. For
+   every new line it reads from the pipe, it should create a new file
+whose name is the first word in the line.
+Can you delete the named pipe when the script ends ?
+
+5. Write a shell script that creates a named pipe and then executes
+   `find /`. If it reads the word "exit" from the named pipe, it should
+stop the find and quit.
+Hint: `$!` is the process id of the last started process
+
  
-## Part 6: Functions
+## Part 7: Functions
 
 1. Write a shell function called sum that returns the sum of its arguments
 2. Write a shell function called countExecutables() that takes a directory name as parameter and returns the number of executable files in that directory.
@@ -97,7 +113,7 @@ emails
 Use a contacts.txt file to store the data.   
 Now write another script which uses the functions
 
-## Part 7: Sed
+## Part 8: Sed
 
 1. Add a blank line after each line of input
 6. Change an existing file, so each line should start with a '> '
