@@ -13,7 +13,11 @@ Slides At:
 [ynonperek.com](http://ynonperek.com/static/unix2/)
 
 Labs At:
-[Unix 2 Labs](http://ynonperek.com/static/unix2/labs/unix_scripting_lab.pdf)
+[Unix 2
+Labs](https://github.com/ynonp/unix2-bash-scripts-slides/blob/master/labs/unix_scripting_lab.md)
+
+Solutions and Demos:
+[Unix 2 Demos](https://github.com/ynonp/unix2-bash-scripts-slides/tree/master/labs)
 
 
 # Agenda
