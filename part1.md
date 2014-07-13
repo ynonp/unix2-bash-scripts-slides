@@ -132,7 +132,7 @@ Currently maintained by Chet Ramey.
 
 
 
-## Wildcard Substitution
+## Wildcard Expansion
 
 * If a word _has a_ wildcard, bash will replace that word with a list
 of matching filenames
