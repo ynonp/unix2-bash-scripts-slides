@@ -148,7 +148,7 @@ of matching filenames
 
 
 
-## Wildcard Substitution
+## Wildcard Expansion
 <table border="1" cellpadding="5" cellspacing="0" class="tuxtable">
   <tbody>
     <tr>
