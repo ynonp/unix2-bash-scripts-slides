@@ -40,8 +40,8 @@
 * Inside the script, parameters are named $1, $2, $3, ...
 * Note $10 doesn't work. You'll need to ${10}
 * Parameters count is saved in $#
-* Access all parameters as one long list with $*
-* Access all parameters as quoted items in a list with $@
+* Access all parameters as one long list with `$*`
+* Access all parameters as quoted items in a list with `$@`
 
 
 
@@ -88,9 +88,11 @@
 
 
 
-## $* vs. $@
+## `$*` vs. `$@`
 * Consider the following script
-<pre><code class="bash"> touch $* </code></pre>
+<pre><code class="bash"> 
+    touch $* 
+</code></pre>
 
 * Now run it with the following
 <pre><code class="bash"> $ ./myscript foo bar buz </code></pre>
@@ -99,9 +101,11 @@
 
 
 
-## $* vs. $@
+## `$*` vs. `$@`
 * Consider the following script
-<pre><code class="bash"> touch $* </code></pre>
+<pre><code class="bash">
+    touch $* 
+</code></pre>
 
 * Now run it with the following
 <pre><code class="bash"> $ ./myscript "foo bar buz" </code></pre>
@@ -110,9 +114,11 @@
 
 
 
-## $* vs. $@
+## `$*` vs. `$@`
 * Now let's fix the script
-<pre><code class="bash"> touch "$*" </code></pre>
+<pre><code class="bash">
+    touch "$*"
+</code></pre>
 
 * Now run it with the following
 <pre><code class="bash"> $ ./myscript "foo bar buz" </code></pre>
@@ -121,9 +127,11 @@
 
 
 
-## $* vs. $@
+## `$*` vs. `$@`
 * Now let's fix the script
-<pre><code class="bash"> touch "$*" </code></pre>
+<pre><code class="bash"> 
+    touch "$*"
+</code></pre>
 
 * Now run it with the following
 <pre><code class="bash"> $ ./myscript "foo" "bar" "buz" </code></pre>
@@ -132,9 +140,11 @@
 
 
 
-## $* vs. $@
+## `$*` vs. `$@`
 * Now let's fix the script
-<pre><code class="bash"> touch "$@" </code></pre>
+<pre><code class="bash">
+    touch "$@"
+</code></pre>
 
 * Now run it with the following
 <pre><code class="bash"> $ ./myscript "foo" "bar" "buz" </code></pre>
@@ -143,10 +153,10 @@
 
 
 
-## $* vs. $@
+## `$*` vs. `$@`
 * Different only when appear in double quotes
-* $* expands to one word
-* $@ expands to multiple quoted words
+* `$*` expands to one word
+* `$@` expands to multiple quoted words
 
 
 
@@ -342,17 +352,17 @@ exit 7
 
 ## String Tests
 <pre><code class="bash">
-  if [[ -z $NAME ]]; then
-    echo "NAME is an empty string"
+    if [[ -z $NAME ]]; then
+      echo "NAME is an empty string"
 
-  if [[ $NAME == "Ynon" ]]; then
-    echo "Strings are equal"
+    if [[ $NAME == "Ynon" ]]; then
+      echo "Strings are equal"
 
-  if [[ "foo" > "bar" ]]; then
-    echo "foo sorts after bar"
+    if [[ "foo" > "bar" ]]; then
+      echo "foo sorts after bar"
 
-  if [[ "hello" == h* ]]; then
-    echo "hello starts with an h"
+    if [[ "hello" == h* ]]; then
+      echo "hello starts with an h"
 </code></pre>
 
 
@@ -366,11 +376,11 @@ exit 7
 
 ## Bash Case
 <pre><code class="bash">
-case $1 in
-  *.png) echo "It's a png image";;
-  *.txt) cat $1;;
-  *.mp3) echo "Cool music";;
-esac
+    case $1 in
+      *.png) echo "It's a png image";;
+      *.txt) cat $1;;
+      *.mp3) echo "Cool music";;
+    esac
 </code></pre>
 
 
@@ -470,10 +480,10 @@ esac
 
 ## Iterate Over Files By Wildcard
 <pre><code class="bash">
-  for TXTFILE in *.txt
-  do
-    cp $TXTFILE ${TXTFILE}.bak
-  done
+    for TXTFILE in *.txt
+    do
+      cp $TXTFILE ${TXTFILE}.bak
+    done
 </code></pre>
 
 
@@ -527,16 +537,16 @@ esac
 * Replace part of the variable
 
 <pre><code class="bash">
-  $ FILENAME=song.mp3
+    $ FILENAME=song.mp3
 
-  $ echo ${FILENAME%.mp3}
-  song
+    $ echo ${FILENAME%.mp3}
+    song
 
-  $ echo ${FILENAME#*.}
-  mp3
+    $ echo ${FILENAME#*.}
+    mp3
 
-  $ echo ${FILENAME/mp/MP}
-  song.MP3
+    $ echo ${FILENAME/mp/MP}
+    song.MP3
 
 </code></pre>
 
@@ -581,12 +591,12 @@ esac
 
 # Shell Arithmetics
 <pre><code class="bash">
-  $ (( x = 5   ))  
-  $ (( x += 27 ))
-  $ (( x *= 2  ))
- 
-  $ echo $x
-  64
+    $ (( x = 5   ))  
+    $ (( x += 27 ))
+    $ (( x *= 2  ))
+   
+    $ echo $x
+    64
 </code></pre>
 
 
@@ -594,18 +604,18 @@ esac
 ## Combining Arithmetics With Scripting
 * Count the number of text files with more than 10 lines
 <pre class="fragment"><code class="bash">
-  #!/usr/bin/env bash
+    #!/usr/bin/env bash
 
-  for FILENAME in *.txt
-  do
-    LINES=$(wc -l $FILENAME| tr -s ' ' | cut -d ' ' -f 2)
-    if [[ $LINES -gt 10 ]]; then
-      (( counter += 1 ))
-    fi
-  done
+    for FILENAME in *.txt
+    do
+      LINES=$(wc -l $FILENAME| tr -s ' ' | cut -d ' ' -f 2)
+      if [[ $LINES -gt 10 ]]; then
+        (( counter += 1 ))
+      fi
+    done
 
-  echo "Found $counter files"
-    
+    echo "Found $counter files"
+      
 </code></pre>
 
 
@@ -771,18 +781,18 @@ esac
 
 ## Array Length
 <pre><code class="bash">
-  # prints 12
-  echo ${#NAMES[0]}
+    # prints 12
+    echo ${#NAMES[0]}
 
-  # prints 12
-  echo ${#NAMES}
+    # prints 12
+    echo ${#NAMES}
 
-  # prints 3
-  echo ${#NAMES[*]} 
+    # prints 3
+    echo ${#NAMES[*]} 
 </code></pre>
 
-* Use ${#ARRAY[index]} to get the length of the item at index
-* Use ${#ARRAY[*]} to get the items count in the array
+* Use `${#ARRAY[index]}` to get the length of the item at index
+* Use `${#ARRAY[*]}` to get the items count in the array
 
 
 

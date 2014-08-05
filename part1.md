@@ -138,12 +138,12 @@ Currently maintained by Chet Ramey.
 of matching filenames
 * Assume files a.txt, b.txt and c.txt are in the current folder
 <pre><code class="bash">
-  # * is a wildcard
-  # so *.txt turns to a.txt b.txt c.txt
-  $ rm *.txt
+    # * is a wildcard
+    # so *.txt turns to a.txt b.txt c.txt
+    $ rm *.txt
 
-  # The same as writing
-  $ rm a.txt b.txt c.txt
+    # The same as writing
+    $ rm a.txt b.txt c.txt
 </code></pre>
 
 
@@ -190,32 +190,56 @@ of matching filenames
 
 ## Wildcards Demo
 <pre><code class="bash">
-  $ ls
-  a.txt b.txt c.pl foobar buttercup Test File
+    $ ls
+    a.txt b.txt c.pl foobar buttercup Test File
 
-  $ echo *.txt
-  <span class="fragment">a.txt b.txt</span>
+    $ echo *.txt
+    <span class="fragment">a.txt b.txt</span>
 
-  <span class="fragment">$ echo [A-Z]*</span>
-  <span class="fragment">Test File</span>
-  <span class="fragment">$ ls *f*</span>
-  <span class="fragment">foobar</span>
+    <span class="fragment">$ echo [A-Z]*</span>
+    <span class="fragment">Test File</span>
+    <span class="fragment">$ ls *f*</span>
+    <span class="fragment">foobar</span>
 
-  <span class="fragment">$ ls .[!.]*</span>
+    <span class="fragment">$ ls .[!.]*</span>
 </code></pre>
 
 
 
 ## More Wildcards
 <pre><code class="bash">
-  $ mv *linux*.html dir1
+    $ mv *linux*.html dir1
 
-  $ less d*.txt
+    $ less d*.txt
 
-  $ ls {hd,sd}[a-c]
+    $ ls {hd,sd}[a-c]
 
-  $ cp [A-Z]* dir2
+    $ cp [A-Z]* dir2
 
+</code></pre>
+
+
+
+## Extended Wildcards
+* If extglob shell option is on, several extended operators are available
+* Enabled extglob with:
+<pre><code class="bash">
+  # check status
+  $ shopt extglob
+
+  # enable
+  $ shopt -s extglob
+</code></pre>
+
+
+
+## Extended Globbing
+<pre><code class="bash">
+    # Display all *.jpeg, *.jpg, *.png, *.gif images
+    $ echo *.@(jpeg|jpg|png|gif)
+
+    # Display all .html files except index.html
+    $ echo !(index).html
 </code></pre>
 
 
@@ -230,7 +254,7 @@ of matching filenames
 
 ## Command Substitution
 <pre><code class="bash">
-  $ printf "0x%x\n" $(date +%Y)
+  $ printf "0x%x\n" $(date  %Y)
 
   $ rm $(cat todelete.txt)
 </code></pre>
@@ -327,9 +351,9 @@ of matching filenames
 
 
 ## Clobbering
-* Tell bash to start clobbering again with `+o`
+* Tell bash to start clobbering again with ` o`
 <pre><code class="bash">
-  $ set +o noclobber
+  $ set  o noclobber
 
   $ ls > testfile
   $ ls > testfile
@@ -656,7 +680,7 @@ command)</span>
 
 ## Defining Functions
 <pre><code class="bash">
-  $ function add() { expr $1 + $2; }
+  $ function add() { expr $1   $2; }
 
 </code></pre>
 * Use the keyword `function` to define a function
@@ -801,14 +825,14 @@ command)</span>
 
 ## Find files by name
 <pre><code class="bash">
-  # find all files named main.c
-  $ find . -name main.c
-  
-  # find all files ending with .o
-  $ find . -name '*.o'
+    # find all files named main.c
+    $ find . -name main.c
+    
+    # find all files ending with .o
+    $ find . -name '*.o'
 
-  # fine all directories named src
-  $ find . -name src -type d
+    # fine all directories named src
+    $ find . -name src -type d
 </code></pre>
 * Don't forget to quote wildcards
 
@@ -816,14 +840,14 @@ command)</span>
 
 ## Find files by size
 <pre><code class="bash">
-  # find all files larger than 2k
-  $ find . -size +2k
+    # find all files larger than 2k
+    $ find . -size  2k
 
-  # find all files smaller than 2mb
-  $ find . -size -2M
+    # find all files smaller than 2mb
+    $ find . -size -2M
 
-  # find all files larger than 2k but smaller than 5k
-  $ find . -size +2k -size -5k
+    # find all files larger than 2k but smaller than 5k
+    $ find . -size  2k -size -5k
 </code></pre>
 
 
@@ -861,7 +885,7 @@ command)</span>
 
 
 ## Job Control
-* Press Ctrl+Z to put a running process "on hold", and go back to the shell
+* Press Ctrl Z to put a running process "on hold", and go back to the shell
 * Use jobs to see all jobs (frozen and background processes)
 * Use fg to return a job to foreground (active process)
 * Use bg to send a frozen task to work in the background
