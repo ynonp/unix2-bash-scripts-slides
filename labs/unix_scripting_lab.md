@@ -112,18 +112,29 @@ emails
 Use a contacts.txt file to store the data.   
 Now write another script which uses the functions
 
-## Part 8: Sed
+5. Write a shell function called `tree` that prints an indented directory tree (without using the `tree` command)
+
+## Part 8: Awk and Sed
 
 1. Add a blank line after each line of input
 6. Change an existing file, so each line should start with a '> '
-7. Use sed to perform the following two replacements:
+7. Write a shell script that takes a file name as input and performs:
   1. If a line starts with `#`, replace each character with a `-`
   2. For all other lines, replace each character with a `.`
-2. `sed = filename` prints out the file with line numbers. Use another
-sed in a pipeline to join each number to its line (removing the newline).
-3. Emulate head with sed (print top 10 lines)
-4. Emulate `tail -1` with sed (print last line of a file)
-5. Emulate `uniq` with sed (delete consecutive duplicate lines)
 8. Delete duplicate words from input line
 9. Replace the first and last word in every line
+10. The command `/sbin/ifconfig` prints out information about network interfaces. Here's a sample output for the command:
+<pre><code>
+en3: flags=8963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500
+        options=60<TSO4,TSO6>
+        ether 32:00:18:24:c0:00
+        media: autoselect <full-duplex>
+        status: inactive
+p2p0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 2304
+        ether 06:38:35:47:96:24
+        media: autoselect
+        status: inactive
+</pre></code>
+Write a shell script that runs `/sbin/ifconfig` and creates an information file for each network interface. For example
+the above interface should produce two files: first is named en3.info and has the en3 block, and the second is named p2p0.info and has the second block
 
