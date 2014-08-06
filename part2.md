@@ -694,7 +694,7 @@ exit 7
 
 * utils.sh contains definitions for some utility functions
 * Use it with `.`
-* Then use functions from it
+* Same as: `source utils.sh`
 
 
 
