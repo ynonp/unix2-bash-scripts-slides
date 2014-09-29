@@ -100,31 +100,13 @@ Currently maintained by Chet Ramey.
 
 
 
-## Quoting: Rule-of-thumb
-
-* Use single quote when you need to prevent shell interpolation
-* Use double quotes when interpolation is required
-
-<pre><code class="bash">
-  # prints Show me the 99634$
-  $ echo Show me the $$$
-
-  # prints Show me the $$$
-  $ echo 'Show me the $$$'
-
-  # prints You're running -bash
-  $ echo "You're running $0"
-
-</code></pre>
-
-
-
 # Q & A <img src="img/qa.png" style="float:right">
 
 
 
 # Shell Basics
 * Wildcards
+* Quoting
 * Pipes & Filters
 * Environment and System Files
 * Find
@@ -240,6 +222,25 @@ of matching filenames
 
     # Display all .html files except index.html
     $ echo !(index).html
+</code></pre>
+
+
+
+## Quoting: Rule-of-thumb
+
+* Use single quote when you need to prevent shell interpolation
+* Use double quotes when interpolation is required
+
+<pre><code class="bash">
+  # prints Show me the 99634$
+  $ echo Show me the $$$
+
+  # prints Show me the $$$
+  $ echo 'Show me the $$$'
+
+  # prints You're running -bash
+  $ echo "You're running $0"
+
 </code></pre>
 
 
