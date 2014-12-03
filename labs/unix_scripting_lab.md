@@ -18,7 +18,7 @@
 
 ***
 
-1. List all files containing a lowercase letter in their name, AND the nonexistant file named `Hidden`
+1. Use `ls` to list all files containing a lowercase letter in their name, AND the nonexistant file named `Hidden`
 2. Now show the same list, but redirect standard output to a file
 3. Now show the same list, but redirect standard error to a file
 4. Combine 2 and 3: Redirect standard output to one file, and standard error to another
