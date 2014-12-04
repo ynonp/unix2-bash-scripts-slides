@@ -842,13 +842,13 @@ command)</span>
 ## Find files by size
 <pre><code class="bash">
     # find all files larger than 2k
-    $ find . -size  2k
+    $ find . -size  +2k
 
     # find all files smaller than 2mb
     $ find . -size -2M
 
     # find all files larger than 2k but smaller than 5k
-    $ find . -size  2k -size -5k
+    $ find . -size  +2k -size -5k
 </code></pre>
 
 

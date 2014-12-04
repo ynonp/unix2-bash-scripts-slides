@@ -18,7 +18,7 @@
 
 ***
 
-1. List all files containing a lowercase letter in their name, AND the nonexistant file named `Hidden`
+1. Use `ls` to list all files containing a lowercase letter in their name, AND the nonexistant file named `Hidden`
 2. Now show the same list, but redirect standard output to a file
 3. Now show the same list, but redirect standard error to a file
 4. Combine 2 and 3: Redirect standard output to one file, and standard error to another
@@ -72,8 +72,16 @@ prints them out backwards (first argument printed last). Hint: use `eval`
 6. Write a shell script that takes a two file extensions as input (call them ext1 and ext2), and renames all files ending with ext1 to end with ext2. 
 7. write a shell script that takes several file names as inputs, and copies itself to each of the files. don't forget to set execute permissions on the target files.
 
+## Part 6: Getopt and Select
+1. Take the lc shellscript from part 4 (which lowercases a file) and modify it so it asks the user for a file name from all the files in the directory.
+2. Write a shell script that asks the user for a file extension (select from all existing extensions in the directory) and prints how many files in the directory have that extension
+3. Modify the previous script to take the extension using a command line switch. Running example: `count_files -e mp3` should print how many mp3 files are in the directory. Running without the switch should perform the same behaviour as the original script.
+4. Write a shell script that takes a file name and a new name, and changes all files with the given name (recursively in all folders) to the new name. The script should accept a boolean switch `-n`. When running with -n it should just print all the mv operations without running them.
 
-## Part 6: Named Pipes
+
+
+
+## Part 7: Named Pipes
 1. Create a named pipe called `bob`
 2. Print out the list of files to the named pipe. Notice ls blocks.
 3. Read the contents of the pipe using cat. Notice ls unblocks.
@@ -88,7 +96,7 @@ stop the find and quit.
 Hint: `$!` is the process id of the last started process
 
  
-## Part 7: Functions
+## Part 8: Functions
 
 1. Write a shell function called sum that returns the sum of its arguments
 2. Write a shell function called countExecutables() that takes a directory name as parameter and returns the number of executable files in that directory.
@@ -114,7 +122,7 @@ Now write another script which uses the functions
 
 5. Write a shell function called `tree` that prints an indented directory tree (without using the `tree` command)
 
-## Part 8: Awk and Sed
+## Part 9: Awk and Sed
 
 1. Add a blank line after each line of input
 6. Change an existing file, so each line should start with a '> '

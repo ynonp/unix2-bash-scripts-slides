@@ -406,6 +406,8 @@ exit 7
 # Bash Loops
 * While loops
 * For loops
+* Getopts
+* Select
 
 
 
@@ -504,6 +506,55 @@ exit 7
     echo "Counting: $i"
   done
 </code></pre>
+
+
+
+## Getopts: Parsing Commnad Line Switches
+* Unix programs usually take switches:
+
+<pre><code class="bash">
+$ ls -rt -l -S
+</code></pre>
+
+
+
+## Getopts Terminology
+
+* Switches can be boolean or take arguments
+<pre><code class="bash">
+$ mybackup -x -f /etc/mybackup.conf -r ./foo.txt bar.txt
+</code></pre>
+
+
+
+## Arg String
+* An argument string defines which switches are expected
+* Boolean options are marked by their letter
+* Options that take arguments are followed by a colon
+* Example: `"xf:r:"`
+
+
+
+## Using Getopts
+<pre><code class="bash">
+while getopts "xf:r:" opt; do
+  case $opt in
+    x)
+      echo "found -x !";;
+    f)
+      echo "found -f. argument was: $OPTARG";;
+    r)
+      echo "found -r. argument was: $OPTARG";;
+  esac
+done
+</code></pre>
+
+
+
+## Access Other Args
+* after getopts, OPTIND is set to the index of the next argument
+* use `shift $((OPTIND-1))` to delete all parsed arguments
+
 
 
 
