@@ -129,7 +129,7 @@ Now write another script which uses the functions
 7. Write a shell script that takes a file name as input and performs:
   1. If a line starts with `#`, replace each character with a `-`
   2. For all other lines, replace each character with a `.`
-8. Delete duplicate words from input line
+8. (*) Delete duplicate words from input line
 9. Replace the first and last word in every line
 10. The command `/sbin/ifconfig` prints out information about network interfaces. Here's a sample output for the command:
 <pre><code>
