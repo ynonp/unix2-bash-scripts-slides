@@ -557,6 +557,25 @@ done
 
 
 
+## Select
+* Use `select` to show a selection menu
+<pre><code class="bash">
+    select filename in *.txt
+    do
+      echo "$filename is a good choice"
+      [[ -z $filename ]] && break
+    done
+</code></pre>
+
+
+
+## Select
+* Select acts as a loop
+* Sets variable to the selected value (or null)
+* Use break to exit
+
+
+
 
 <div class="slide-img">
   <h1>Q &amp; A</h1>
@@ -862,4 +881,15 @@ done
     <li class="done">Arrays</li>
   </ul>
 </div>
+
+
+
+# Thanks For Listening
+* Lab solutions:
+
+	https://github.com/ynonp/unix2-bash-scripts-slides/tree/master/labs	
+
+* Keep In Touch:
+
+  ynon@ynonperek.com
 
