@@ -79,20 +79,18 @@
 
 ## Reading Input From User
 <pre><code class="bash">
-  read -p "Who Are You ?" NAME
-  echo "Hello, $NAME"
+  read -p "Who Are You ?" name
+  echo "Hello, $name"
 
-  read -p "Who are you ?" FIRST LAST
-  echo "Hello, Mr. $LAST."
+  read -p "Who are you ?" first last
+  echo "Hello, Mr. $last."
 </code></pre>
 
 
 
 ## `$*` vs. `$@`
 * Consider the following script
-<pre><code class="bash"> 
-    touch $* 
-</code></pre>
+<pre><code class="bash">touch $*</code></pre>
 
 * Now run it with the following
 <pre><code class="bash"> $ ./myscript foo bar buz </code></pre>
@@ -103,9 +101,7 @@
 
 ## `$*` vs. `$@`
 * Consider the following script
-<pre><code class="bash">
-    touch $* 
-</code></pre>
+<pre><code class="bash">touch $*</code></pre>
 
 * Now run it with the following
 <pre><code class="bash"> $ ./myscript "foo bar buz" </code></pre>
@@ -116,9 +112,7 @@
 
 ## `$*` vs. `$@`
 * Now let's fix the script
-<pre><code class="bash">
-    touch "$*"
-</code></pre>
+<pre><code class="bash">touch "$*"</code></pre>
 
 * Now run it with the following
 <pre><code class="bash"> $ ./myscript "foo bar buz" </code></pre>
@@ -129,9 +123,7 @@
 
 ## `$*` vs. `$@`
 * Now let's fix the script
-<pre><code class="bash"> 
-    touch "$*"
-</code></pre>
+<pre><code class="bash">touch "$*"</code></pre>
 
 * Now run it with the following
 <pre><code class="bash"> $ ./myscript "foo" "bar" "buz" </code></pre>
@@ -142,9 +134,7 @@
 
 ## `$*` vs. `$@`
 * Now let's fix the script
-<pre><code class="bash">
-    touch "$@"
-</code></pre>
+<pre><code class="bash">touch "$@"</code></pre>
 
 * Now run it with the following
 <pre><code class="bash"> $ ./myscript "foo" "bar" "buz" </code></pre>
@@ -200,10 +190,10 @@
 
 ## Script Variables
 <pre><code class="bash">
-  COUNT=5
-  NAME=Ynon
-  SONG_LINE="99 bottles of beer on the wall"
-  TEXT='Can I borrow $5 ?'
+  count=5
+  name=Ynon
+  song_line="99 bottles of beer on the wall"
+  text='Can I borrow $5 ?'
 </code></pre>
 
 * No space around `=`
@@ -214,9 +204,9 @@
 
 ## Using Variables
 <pre><code class="bash">
-  echo $COUNT
-  echo $NAME     $COUNT
-  cowsay $SONG_LINE
+  echo $count
+  echo $name     $count
+  cowsay $song_line
 </code></pre>
 * Using a variable requires the $
 
@@ -333,10 +323,10 @@ exit 7
 
 ## Numeric Tests
 <pre><code class="bash">
-  ZOMBIES=200
-  HUMANS=50
+  zombies=200
+  humans=50
 
-  if [[ $ZOMBIES -gt $HUMANS ]]; then
+  if [[ $zombies -gt $humans ]]; then
     echo "It's a zombie apocalipse, run for your lives"
 
   if [[ 5 -lt 2 ]]; then
@@ -352,10 +342,10 @@ exit 7
 
 ## String Tests
 <pre><code class="bash">
-    if [[ -z $NAME ]]; then
-      echo "NAME is an empty string"
+    if [[ -z $name ]]; then
+      echo "name is an empty string"
 
-    if [[ $NAME == "Ynon" ]]; then
+    if [[ $name == "Ynon" ]]; then
       echo "Strings are equal"
 
     if [[ "foo" > "bar" ]]; then
@@ -443,12 +433,23 @@ exit 7
 
 ## While In Bash
 <pre><code class="bash">
-  read -p "What is the password ?" PASSWORD
-  while [[ $PASSWORD != "shhh" ]]; do
-    read -p "Wrong! Try again: " PASSWORD
+  read -p "What is the password ?" password
+  while [[ $password != "shhh" ]]; do
+    read -p "Wrong! Try again: " password
   done
   
   echo "Welcome, Master"
+</code></pre>
+
+
+
+## While read file
+
+<pre><code class="bash">
+#!/bin/bash
+while IFS='' read -r line || [[ -n "$line" ]]; do
+    echo "Text read from file: $line"
+done < "$1"
 </code></pre>
 
 
@@ -462,11 +463,11 @@ exit 7
 
 ## Bash For
 <pre><code class="bash">
-  FRUITS="Apple Banana Orange Strawberry"
+  fruits="Apple Banana Orange Strawberry"
 
-  for ITEM in $FRUITS
+  for item in $fruits
   do
-    echo I want to eat an $ITEM
+    echo I want to eat an $item
   done
 
 </code></pre>
@@ -482,9 +483,9 @@ exit 7
 
 ## Iterate Over Files By Wildcard
 <pre><code class="bash">
-    for TXTFILE in *.txt
+    for txtfile in *.txt
     do
-      cp $TXTFILE ${TXTFILE}.bak
+      cp $txtfile ${txtfile}.bak
     done
 </code></pre>
 
@@ -492,9 +493,9 @@ exit 7
 
 ## Iterate Over Positionals
 <pre><code class="bash">
-  for ARGUMENT
+  for argument
   do
-    echo "Got: $ARGUMENT"
+    echo "Got: $argument"
   done
 </code></pre>
 
@@ -607,15 +608,15 @@ done
 * Replace part of the variable
 
 <pre><code class="bash">
-    $ FILENAME=song.mp3
+    $ filename=song.mp3
 
-    $ echo ${FILENAME%.mp3}
+    $ echo ${filename%.mp3}
     song
 
-    $ echo ${FILENAME#*.}
+    $ echo ${filename#*.}
     mp3
 
-    $ echo ${FILENAME/mp/MP}
+    $ echo ${filename/mp/MP}
     song.MP3
 
 </code></pre>
@@ -676,10 +677,10 @@ done
 <pre class="fragment"><code class="bash">
     #!/usr/bin/env bash
 
-    for FILENAME in *.txt
+    for filename in *.txt
     do
-      LINES=$(wc -l $FILENAME| tr -s ' ' | cut -d ' ' -f 2)
-      if [[ $LINES -gt 10 ]]; then
+      lines=$(wc -l $filename| tr -s ' ' | cut -d ' ' -f 2)
+      if [[ $lines -gt 10 ]]; then
         (( counter += 1 ))
       fi
     done
@@ -821,12 +822,12 @@ done
 
 <pre><code class="bash">
   # Declare using assignment
-  FILES=(/etc/group /etc/hosts /etc/passwd)
+  files=(/etc/group /etc/hosts /etc/passwd)
  
   # Assign elements one-by-one
-  NAMES[0]="Captain Kirk"
-  NAMES[1]="Spock"
-  NAMES[2]="Bones"
+  names[0]="Captain Kirk"
+  names[1]="Spock"
+  names[2]="Bones"
 
 </code></pre>
 
@@ -837,10 +838,10 @@ done
 ## Using Arrays
 <pre><code class="bash">
   # print Spock
-  echo ${NAMES[1]}
+  echo ${names[1]}
 
   # print Captain Kirk[0]
-  echo $NAMES[1]
+  echo $names[1]
   
 </code></pre>
 
@@ -852,14 +853,18 @@ done
 ## Array Length
 <pre><code class="bash">
     # prints 12
-    echo ${#NAMES[0]}
+    echo ${#names[0]}
 
     # prints 12
-    echo ${#NAMES}
+    echo ${#names}
 
     # prints 3
-    echo ${#NAMES[*]} 
+    echo ${#names[*]} 
 </code></pre>
+
+
+
+## Array Length
 
 * Use `${#ARRAY[index]}` to get the length of the item at index
 * Use `${#ARRAY[*]}` to get the items count in the array

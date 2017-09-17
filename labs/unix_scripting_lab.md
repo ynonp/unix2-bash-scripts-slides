@@ -45,32 +45,34 @@
 ## Part 3: Getting Parameters
 
 1. Write a shell script that takes a file name as input and prints the file backwards
-2. Write a shell script that takes two file names as inputs, and replaces their contents.
-3. Write a shell script that reads a file name from the user, prints its contents and the number of lines in the file.
-4. Write a shell script that takes a Windows file (lines end with
-   `\r\n`) and converts it to a Unix file (lines end with `\n`).
+2. Write a shell script that reads a file name from the user, prints its contents and the number of lines in the file.
+3. We can get a list of all file extensions in current directory using: `ls *.* | cut -d. -f2|sort -u`. Find a way to get the same list using only shell builtins (i.e. without `cut`, `awk`, `sed`, `grep` or `tr`)
+7. Write a shell script that finds each directory named `Misc` under current folder recursively and replaces each to the name `Test`. Hint: Use find
+8. Write a shell script that takes any number of numeric arguments and prints the largest one
 
 ## Part 4: Conditionals
 
+1. Write a shell script that asks the user for a number, if the user chooses 7 - print "You Win".
+2. Modify 02.csh from previous part so that it CAN take argument from command line. If no argument was passed read from STDIN 
 1. Write a shell script that takes an input argument and tells if it's a string or a number (Hint: try `expr a + 0`)
-2. Write a shell script that takes 3 input arguments and prints out the largest one
-3. Write a shell script that reads a name from the user - if that name is an executable program run it, otherwise print its content.
-If it's not a file print an error message.
-4. Write a shell script that takes two file names, and prints the contents of the larger one.
-5. Write a shell script that asks the user for a number, if the user chooses 7 - print "You Win".
-6. Write a `safedel` script. The script takes a file name as command line input, and moves that file to a `~/TRASH` directory instead of deleting it.   
-Upon invocation, script should check `~/TRASH` for files older than 48 hours and delete them (hint: use `find`).
-7. Write a shell script that reads a file name from the user, checks that the file is valid, and lowecases its name. For example, running `lc MyFile` should rename the file `MyFile` to `myfile`.
+4. Write a shell script called `eyes` that starts and tracks a single xeyes instance:
+    - Typing `eyes start` starts xeyes and writes the started process id in a file (called eyes.pid). If the file already exists start should not start a new instance.
+    - Typing `eyes stop` checks if an eyes.pid file exists, and if so kills the process and deletes the file. If no eyes.pid file exists stop should do nothing.
+    - Typing `eyes status` checks if eyes.pid file exists. If it does prints "Running", else prints "Not Running".
+    - Make sure `eyes stop` kills only the xeyes instance started by `eyes start`.
+5. Write a shell script that prints the sum of its arguments
+
 
 ## Part 5: Loops
-1. Write a shell script that takes input as command line arguments and
-prints them out backwards (first argument printed last). Hint: use `eval`
 2. Write a shell script called "wait_for_user" that takes a user name and checks if the user is logged in. If she's not logged in, the script sleeps for 5 seconds and checks again in a loop - until the user logs in.
 3. Write a shell script that reads a file and prints its content double-spaced (adding a blank line after each line)
 4. Write a shell script that reads a file and prints its content with no blank lines.
 5. Write a shell script that reads a file and prints out only the longest line
 6. Write a shell script that takes a two file extensions as input (call them ext1 and ext2), and renames all files ending with ext1 to end with ext2. 
 7. write a shell script that takes several file names as inputs, and copies itself to each of the files. don't forget to set execute permissions on the target files.
+1. Write a shell script that takes input as command line arguments and prints them out backwards (first argument printed last).
+9. Write a shell script that print an indented directory tree (without using tree, find or ls)
+
 
 ## Part 6: Getopt and Select
 1. Take the lc shellscript from part 4 (which lowercases a file) and modify it so it asks the user for a file name from all the files in the directory.
