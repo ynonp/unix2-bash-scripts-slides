@@ -212,6 +212,31 @@
 
 
 
+## Derived Values
+<pre><code class="bash">
+fname=/home/ynon/music/demo.mp3
+
+# prints /ynon/music/demo.mp3
+echo ${fname#/home}
+
+# prints /home/ynon/music/demo
+echo ${fname#*.}
+</code></pre>
+
+
+
+## Derived Values
+<pre><code class="bash">
+${var#prefix}
+${var##prefix}
+${var%suffix}
+${var%%suffix}
+${var/replace/with}
+${var//replace/with}
+</code></pre>
+
+
+
 # Making Decisions
 
 

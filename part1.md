@@ -1,6 +1,7 @@
 # Advanced Unix & Bash
 
-Slides By: [Ynon Perek](http://ynonperek.com).
+Instructor: [Ynon Perek](http://ynonperek.com).
+Slides And Demos: [bit.ly/intel-unix2](http://bit.ly/intel-unix2)
 
 
 
@@ -9,12 +10,8 @@ Slides By: [Ynon Perek](http://ynonperek.com).
 My Email: 
 [ynon@ynonperek.com](mailto:ynon@ynonperek.com)
 
-Slides At: 
-[ynonperek.com](http://ynonperek.com/static/unix2/)
-
 Labs At:
-[Unix 2
-Labs](https://github.com/ynonp/unix2-bash-scripts-slides/blob/master/labs/unix_scripting_lab.md)
+[http://bit.ly/1w1GINx](http://bit.ly/1w1GINx)
 
 
 
@@ -209,6 +206,9 @@ of matching filenames
 
   # enable
   $ shopt -s extglob
+
+  # disable
+  $ shopt -u extglob
 </code></pre>
 
 
